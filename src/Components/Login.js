@@ -3,6 +3,7 @@ import React, { useCallback, useContext } from "react";
 import { withRouter, Redirect } from "react-router";
 import app from "./base.js";
 import { AuthContext } from "./Auth.js";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const Login = ({ history }) => {
   const handleLogin = useCallback(
@@ -49,6 +50,9 @@ const Login = ({ history }) => {
           <button type="submit" className="btn btn-log-col btn-hover btn-block">
             Login
           </button>
+          <p className="forgot-password text-right l-font">
+            Already registered, Go to<Link to={"/SignUp"}>Signup?</Link>
+          </p>
         </form>
       </div>
     </div>
