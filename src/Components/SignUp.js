@@ -1,5 +1,7 @@
 import React, { useCallback } from "react";
 import { withRouter } from "react-router";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 import app from "./base";
 
 const SignUp = ({ history }) => {
@@ -45,6 +47,15 @@ const SignUp = ({ history }) => {
                   placeholder="Enter password"
                 />
               </div>
+              <div className="form-group">
+                <label className="l-font">Re-Enter Password</label>
+                <input
+                  type="password"
+                  name="rpassword"
+                  className="form-control l-font"
+                  placeholder="Enter password"
+                />
+              </div>
 
               <button
                 type="submit"
@@ -52,6 +63,9 @@ const SignUp = ({ history }) => {
               >
                 SignUp
               </button>
+              <p className="forgot-password text-right l-font">
+                Already registered, Go to<Link to={"/Login"}>Login?</Link>
+              </p>
             </form>
           </div>
         </div>
